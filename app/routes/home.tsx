@@ -1,13 +1,530 @@
+import { useState } from "react";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "IO TECH - Innovate. Optimize. Connect." },
+    { name: "description", content: "IO TECH: Where intelligent input meets exceptional output. We build high-performance software and stunning websites that grow your business." },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation Header */}
+      <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <nav className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <a href="#" className="group">
+              <img 
+                src="/logo.png" 
+                alt="IO TECH Logo" 
+                className="h-12 w-auto group-hover:scale-110 transition-transform duration-300"
+              />
+            </a>
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group">
+                About
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group">
+                Services
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group">
+                Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#contact" className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Get Started
+              </a>
+            </div>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-gray-700"
+              aria-label="Toggle menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-3">
+              <a href="#about" className="block text-gray-700 hover:text-blue-600 transition" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="#services" className="block text-gray-700 hover:text-blue-600 transition" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              <a href="#contact" className="block text-gray-700 hover:text-blue-600 transition" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            </div>
+          )}
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center py-20 px-6 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-green-500">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='1'/%3E%3C/svg%3E")`,
+            backgroundSize: '200px 200px'
+          }}></div>
+        </div>
+        
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <div className="text-white">
+              <div className="inline-block mb-6">
+                <span className="text-sm font-semibold text-blue-100 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
+                  Transform Your Digital Future
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span className="block">Where Intelligent</span>
+                <span className="block text-green-300">Input Meets</span>
+                <span className="block">Exceptional Output</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-2xl">
+                We build high-performance software, stunning websites, and innovative solutions that drive your business forward. 
+                From concept to deployment, we turn your vision into reality.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a 
+                  href="#contact" 
+                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center"
+                >
+                  Get Started Today
+                </a>
+                <a 
+                  href="#services" 
+                  className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 text-center"
+                >
+                  Explore Services
+                </a>
+              </div>
+              <div className="flex items-center gap-8 text-blue-100">
+                <div>
+                  <div className="text-3xl font-bold text-white">20+</div>
+                  <div className="text-sm">Projects Delivered</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white">10+</div>
+                  <div className="text-sm">Happy Clients</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white">4+</div>
+                  <div className="text-sm">Years Experience</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Visual Element */}
+            <div className="hidden lg:flex justify-center items-center">
+              <div className="relative w-full max-w-lg">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-green-400 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+                <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-12 border border-white/20 shadow-2xl">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl mb-4 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                      </div>
+                      <div className="text-white font-semibold">Web Dev</div>
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl mb-4 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div className="text-white font-semibold">Software</div>
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl mb-4 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                      </div>
+                      <div className="text-white font-semibold">UI/UX</div>
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl mb-4 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <div className="text-white font-semibold">Consulting</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-4 py-2 rounded-full">Who We Are</span>
+            </div>
+            <h2 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+              <span className="text-blue-600">ABOUT</span>
+              <span className="text-green-500"> US</span>
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
+                IO TECH: WHERE INTELLIGENT INPUT MEETS EXCEPTIONAL OUTPUT
+              </p>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                We build high-performance software and stunning websites that grow your business. 
+                From strategy to execution, we bring your digital vision to life.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
+            {/* Logo Circle */}
+            <div className="flex justify-center">
+              <div className="relative w-80 h-80 group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-green-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div className="relative w-80 h-80 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center p-8 transform group-hover:scale-105 transition-transform duration-300">
+                  <img 
+                    src="/logo-only.png" 
+                    alt="IO TECH Logo" 
+                    className="w-48 h-auto mb-4"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Services Preview */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Services</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 text-lg font-medium group-hover:text-blue-600 transition-colors">CUSTOM SOFTWARE DEVELOPMENT</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 text-lg font-medium group-hover:text-blue-600 transition-colors">UI/UX DESIGN</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 text-lg font-medium group-hover:text-blue-600 transition-colors">WEB DEVELOPMENT</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 text-lg font-medium group-hover:text-blue-600 transition-colors">TECH CONSULTING</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 text-lg font-medium group-hover:text-blue-600 transition-colors">LOGO DESIGN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-green-500 text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">20+</div>
+              <div className="text-blue-100">Projects Completed</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">10+</div>
+              <div className="text-blue-100">Happy Clients</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">4+</div>
+              <div className="text-blue-100">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
+              <div className="text-blue-100">Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 px-6 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-green-100 rounded-full blur-3xl opacity-30"></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-4 py-2 rounded-full inline-block mb-4">What We Offer</span>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">
+              <span className="text-blue-600">OUR</span>
+              <span className="text-green-500"> SERVICES</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Comprehensive technology solutions tailored to your business needs
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Web Development */}
+            <div className="bg-white border-2 border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Web Development</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We create responsive, high-performance websites that engage users and drive business growth. 
+                From simple landing pages to complex web applications.
+              </p>
+            </div>
+
+            {/* Custom Software Development */}
+            <div className="bg-white border-2 border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Custom Software Development</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Tailored software solutions designed to meet your unique business needs. 
+                Scalable, secure, and built for long-term success.
+              </p>
+            </div>
+
+            {/* UI/UX Design */}
+            <div className="bg-white border-2 border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">UI/UX Design</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Beautiful, intuitive interfaces that users love. We combine aesthetics with functionality 
+                to create exceptional user experiences.
+              </p>
+            </div>
+
+            {/* IT Consulting */}
+            <div className="bg-white border-2 border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">IT Consulting</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Strategic technology guidance to help you make informed decisions. 
+                We help optimize your tech stack and digital strategy.
+              </p>
+            </div>
+
+            {/* Logo Design */}
+            <div className="bg-white border-2 border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Logo Design</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Memorable brand identities that make a lasting impression. 
+                Professional logos that represent your company's values and vision.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-100 to-blue-100 rounded-full blur-3xl opacity-30"></div>
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-4 py-2 rounded-full inline-block mb-4">Get In Touch</span>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">
+              <span className="text-blue-600">Let's Build</span>
+              <span className="text-green-500"> Something Great</span>
+              <span className="text-blue-600"> Together</span>
+            </h2>
+            <p className="text-xl text-gray-600 mt-6">
+              Ready to transform your digital presence? Get in touch with us today.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
+            <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Message us!</h3>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  Have a project in mind? We'd love to hear from you. 
+                  Send us a message and we'll respond as soon as possible.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-blue-600 group">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                      <svg className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span className="text-lg font-medium">iotechsolutions@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-green-600 group">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-600 transition-colors">
+                      <svg className="w-6 h-6 text-green-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <span className="text-lg font-medium">+1 (555) 123-4567</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 w-full">
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Thank you for your message! We\'ll get back to you soon.'); }}>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      placeholder="Your Message"
+                      rows={4}
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-blue-600 to-green-500 text-white py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v22H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="mb-4">
+                <img 
+                  src="/logo.png" 
+                  alt="IO TECH Logo" 
+                  className="h-12 w-auto mb-2"
+                />
+              </div>
+              <p className="text-gray-500 text-sm">Transforming ideas into digital excellence.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-white">Services</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">Web Development</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">Custom Software</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">UI/UX Design</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">IT Consulting</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">Logo Design</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-white">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#about" className="hover:text-blue-400 transition-colors">About Us</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">Our Services</a></li>
+                <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-white">Contact</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  contact@iotech.com
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  +1 (555) 123-4567
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+            <p>&copy; {new Date().getFullYear()} IO TECH. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
