@@ -45,12 +45,14 @@ export default function Home() {
       "  • UI/UX Design",
       "  • IT Consulting",
       "  • Logo Design",
+      "  • Brochures & Flyers",
+      "  • Graphic Design Services",
       ""
     ],
     contact: [
       "Get in touch with us:",
-      "  Email: iotechsolutions@gmail.com",
-      "  Phone: +63 912 345 6789",
+      "  Email: contact.iotechph@gmail.com",
+      "  Phone: +63 991 732 1120",
       "  Website: io-tech.com",
       ""
     ],
@@ -559,14 +561,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-5 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 group cursor-pointer border border-white/30 hover:border-blue-200/50">
-                  <div className="w-14 h-14 bg-gradient-to-br from-pink-600 to-pink-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
                     <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                     </svg>
                   </div>
                   <div>
-                    <span className="text-gray-800 text-lg font-bold group-hover:text-pink-600 transition-colors block">Logo Design</span>
-                    <span className="text-gray-600 text-sm">Memorable brand identities</span>
+                    <span className="text-gray-800 text-lg font-bold group-hover:text-purple-600 transition-colors block">Graphic Design</span>
+                    <span className="text-gray-600 text-sm">Creative designs & branding</span>
                   </div>
                 </div>
               </div>
@@ -693,6 +695,34 @@ export default function Home() {
                 Professional logos that represent your company's values and vision.
               </p>
             </div>
+
+            {/* Brochures & Flyers */}
+            <div className="bg-white/40 backdrop-blur-md border-2 border-white/30 p-8 rounded-2xl hover:border-blue-200/50 hover:shadow-2xl hover:bg-white/50 transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z M13 3v5a2 2 0 002 2h5" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Brochures & Flyers</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Eye-catching marketing materials that effectively communicate your message. 
+                From brochures to flyers, we create designs that grab attention and drive results.
+              </p>
+            </div>
+
+            {/* Graphic Design Services */}
+            <div className="bg-white/40 backdrop-blur-md border-2 border-white/30 p-8 rounded-2xl hover:border-blue-200/50 hover:shadow-2xl hover:bg-white/50 transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-500 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Graphic Design Services</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Comprehensive graphic design solutions including social media graphics, banners, posters, and more. 
+                Creative designs that elevate your brand presence.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -714,65 +744,37 @@ export default function Home() {
           </div>
           
           <div className="bg-white/40 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-white/30">
-            <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Message us!</h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">
-                  Have a project in mind? We'd love to hear from you. 
-                  Send us a message and we'll respond as soon as possible.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-blue-600 group">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                      <svg className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <span className="text-lg font-medium">iotechsolutions@gmail.com</span>
+            <div className="text-center max-w-2xl mx-auto">
+              <h3 className="text-3xl font-bold text-gray-800 mb-6">Get in Touch</h3>
+              <p className="text-gray-600 mb-12 leading-relaxed text-lg">
+                Have a project in mind? We'd love to hear from you. 
+                Reach out using the information below and we'll respond as soon as possible.
+              </p>
+              <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-6">
+                <a href="mailto:contact.iotechph@gmail.com" className="flex items-center gap-4 text-blue-600 group hover:text-blue-700 transition-all">
+                  <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-600 group-hover:scale-110 transition-all">
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                   </div>
-                  <div className="flex items-center gap-3 text-green-600 group">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-600 transition-colors">
-                      <svg className="w-6 h-6 text-green-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <span className="text-lg font-medium">+63 912 345 6789</span>
+                  <span className="text-xl font-semibold">contact.iotechph@gmail.com</span>
+                </a>
+                <a href="tel:+63" className="flex items-center gap-4 text-green-600 group hover:text-green-700 transition-all">
+                  <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-600 group-hover:scale-110 transition-all">
+                    <svg className="w-7 h-7 text-green-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
                   </div>
-                </div>
-              </div>
-              <div className="flex-1 w-full">
-                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Thank you for your message! We\'ll get back to you soon.'); }}>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
-                    />
+                  <span className="text-xl font-semibold">+63 991 732 1120</span>
+                </a>
+                <a href="https://www.facebook.com/share/1CEsfFJac9/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-blue-700 group hover:text-blue-800 transition-all">
+                  <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-700 group-hover:scale-110 transition-all">
+                    <svg className="w-7 h-7 text-blue-700 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0z" />
+                    </svg>
                   </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      placeholder="Your Message"
-                      rows={4}
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-green-500 text-white py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                  <span className="text-xl font-semibold">IO Tech Facebook Page</span>
+                </a>
               </div>
             </div>
           </div>
@@ -807,6 +809,8 @@ export default function Home() {
                 <li><a href="#services" className="hover:text-blue-400 transition-colors">UI/UX Design</a></li>
                 <li><a href="#services" className="hover:text-blue-400 transition-colors">IT Consulting</a></li>
                 <li><a href="#services" className="hover:text-blue-400 transition-colors">Logo Design</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">Brochures & Flyers</a></li>
+                <li><a href="#services" className="hover:text-blue-400 transition-colors">Graphic Design</a></li>
               </ul>
             </div>
             <div>
@@ -824,13 +828,13 @@ export default function Home() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  contact@iotech.com
+                  contact.iotech@gmail.com
                 </li>
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  +63 912 345 6789
+                  +63 991 732 1120
                 </li>
               </ul>
             </div>
